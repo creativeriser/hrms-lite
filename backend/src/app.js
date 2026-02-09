@@ -8,10 +8,7 @@ const app = express();
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cors({
-    origin: ['http://localhost:3000', 'http://127.0.0.1:3000'],
-    credentials: true
-}));
+app.use(cors()); // Allow all origins for simplicity (or add your Vercel URL later)
 
 // Routes
 app.use('/api', routes);
